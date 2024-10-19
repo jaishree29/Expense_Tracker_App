@@ -11,7 +11,10 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
-  final List<Expense> _registeredExpenses = [];
+  final List<Expense> _registeredExpenses = [
+    Expense(amount: 200, date: DateTime.now(), title: 'Burger', category: Categories.food),
+    Expense(amount: 16000, date: DateTime.now(), title: 'Japan', category: Categories.travel)
+  ];
 
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
@@ -65,7 +68,7 @@ class _ExpensesState extends State<Expenses> {
           style: TextStyle(color: Colors.white),
         ),
         actionsIconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.lightBlue,
+        // backgroundColor: Colors.lightBlue,
         actions: [
           IconButton(
             onPressed: _openAddExpenseOverlay,
@@ -73,7 +76,7 @@ class _ExpensesState extends State<Expenses> {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
